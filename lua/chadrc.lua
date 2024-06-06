@@ -4,13 +4,26 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-	theme = "onedark",
+-- disable go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+vim.opt.whichwrap = ""
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+M.ui = {
+  theme = "tokyodark",
+  changed_themes = {
+    tokyodark = {
+      base_16 = {
+        -- changing the color of highlight
+        -- base02 = "#2a1752",
+        base02 = "#845c20",
+      },
+    },
+  },
+
+  tabufline = {
+    enabled = false,
+  },
 }
+-- require("oil").setup()
 
 return M
